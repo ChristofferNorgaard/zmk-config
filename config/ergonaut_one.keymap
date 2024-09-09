@@ -1,1 +1,63 @@
-boards/shields/ergonaut_one/ergonaut_one.keymap
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+
+#define DEF 0
+#define LWR 1
+#define RSE 2
+#define ADJ 3
+
+&lt { quick-tap-ms = <200>; };
+
+&mt { quick-tap-ms = <200>; };
+
+/ {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        tri-layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+&kp TAB         &kp Q  &kp W  &kp E         &kp R      &kp T  &kp Y          &kp U        &kp I      &kp O    &kp P     &kp EQUAL
+&kp LCTRL       &kp A  &kp S  &kp D         &kp F      &kp G  &kp H          &kp J        &kp K      &kp L    &kp SEMI  &mt RCTRL SQT
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C         &kp V      &kp B  &kp N          &kp M        &kp COMMA  &kp DOT  &kp FSLH  &mt RALT BSLH
+                              &kp LEFT_WIN  &kp SPACE  &to 1  &kp BACKSPACE  &lt 2 ENTER  &kp RALT
+            >;
+        };
+
+        lower_layer {
+            bindings = <
+&mt LGUI F1     &kp EXCL   &kp AT_SIGN  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE   &kp SLASH      &kp N7        &kp N8        &kp N9        &kp F11   &kp F12
+&kp LCTRL       &kp HASH   &kp DOLLAR   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp GRAVE  &kp STAR       &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp RPAR  &mt RCTRL MINUS
+&mt LALT EQUAL  &kp PRCNT  &kp CARET    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp TILDE  &kp BACKSLASH  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0    &kp RALT
+                                        &trans                &trans                 &trans     &kp TAB        &kp ESCAPE    &kp LEFT_ALT
+            >;
+        };
+
+        raise_layer {
+            bindings = <
+&kp F1           &kp F2           &kp F3     &kp F4      &kp F5      &kp F6       &kp F7      &kp F8          &kp F9           &kp F10          &kp F12        &kp CLCK
+&mt LCTRL EQUAL  &kp KP_MULTIPLY  &kp KP_N4  &bt BT_PRV  &bt BT_NXT  &kp KP_PLUS  &kp LEFT    &kp DOWN_ARROW  &kp UP           &kp RIGHT        &kp PAGE_UP    &mt RCTRL K_APP
+&kp LALT         &kp KP_N0        &kp KP_N1  &kp KP_N2   &kp KP_N3   &kp KP_DOT   &kp K_MUTE  &kp C_VOL_DN    &kp C_VOLUME_UP  &kp PAUSE_BREAK  &kp PAGE_DOWN  &kp RALT
+                                             &trans      &trans      &trans       &trans      &trans          &trans
+            >;
+        };
+
+        adjust_layer {
+            bindings = <
+&bootloader  &none         &none         &none         &none         &none         &none         &none         &none         &none         &none         &bootloader
+&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR
+&sys_reset   &none         &none         &none         &none         &none         &none         &none         &none         &none         &none         &sys_reset
+                                         &trans        &none         &trans        &none         &trans        &trans
+            >;
+        };
+    };
+};
