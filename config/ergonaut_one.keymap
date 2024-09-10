@@ -35,7 +35,7 @@
 
         lower_layer {
             bindings = <
-&sl 3           &kp EXCL   &kp AT_SIGN  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE   &kp SLASH      &kp N7        &kp N8        &kp N9        &kp F11   &kp F12
+&to 3           &kp EXCL   &kp AT_SIGN  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE   &kp SLASH      &kp N7        &kp N8        &kp N9        &kp F11   &kp F12
 &kp LCTRL       &kp HASH   &kp DOLLAR   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp GRAVE  &kp STAR       &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp RPAR  &mt RCTRL MINUS
 &mt LALT EQUAL  &kp PRCNT  &kp CARET    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp TILDE  &kp BACKSLASH  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0    &kp RALT
                                         &trans                &trans                 &trans     &kp TAB        &kp ESCAPE    &kp LEFT_ALT
@@ -44,7 +44,7 @@
 
         raise_layer {
             bindings = <
-&kp F1           &kp F1           &kp F2     &kp F3      &kp F4      &kp F5       &kp F6      &kp F7          &kp F8           &kp F9           &kp F10        &sl 3
+&kp F1           &kp F1           &kp F2     &kp F3      &kp F4      &kp F5       &kp F6      &kp F7          &kp F8           &kp F9           &kp F10        &to 3
 &mt LCTRL EQUAL  &kp KP_MULTIPLY  &kp KP_N4  &bt BT_PRV  &bt BT_NXT  &kp KP_PLUS  &kp LEFT    &kp DOWN_ARROW  &kp UP           &kp RIGHT        &kp PAGE_UP    &mt RCTRL K_APP
 &kp LALT         &kp KP_N0        &kp KP_N1  &kp KP_N2   &kp KP_N3   &kp KP_DOT   &kp K_MUTE  &kp C_VOL_DN    &kp C_VOLUME_UP  &kp PAUSE_BREAK  &kp PAGE_DOWN  &sys_reset
                                              &trans      &trans      &trans       &trans      &trans          &trans
@@ -53,7 +53,7 @@
 
         adjust_layer {
             bindings = <
-&none       &none         &none         &none         &none         &bootloader   &bootloader   &none         &none         &none         &none         &none
+&to 0       &none         &none         &none         &none         &bootloader   &bootloader   &none         &none         &none         &none         &to 0
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR
 &sys_reset  &none         &none         &none         &none         &none         &none         &none         &none         &none         &none         &sys_reset
                                         &trans        &none         &trans        &none         &trans        &trans
